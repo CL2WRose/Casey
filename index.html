@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gasey</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
+
 <body>
-    
+    <div id="window">
+        <img id="casey" src="Casey.png" alt="It's casey">
+        <audio id="myAudio" src="CaseySoundnEIo.mp3" preload="auto"></audio>
+    </div>
+    <script>
+        const hoverButton = document.getElementById('casey');
+        const hoverAudio = document.getElementById('caseyAudio');
+
+        // Function to play the audio
+        function playAudio() {
+            hoverAudio.currentTime = 0;
+            hoverAudio.play();
+        }
+
+        // Function to stop the audio
+        function stopAudio() {
+            hoverAudio.pause();
+            hoverAudio.currentTime = 0;
+        }
+
+        // Event listeners for mouse hover
+        hoverButton.addEventListener('mouseover', playAudio);
+        hoverButton.addEventListener('mouseleave', stopAudio);
+
+        // Event listeners for keyboard focus (accessibility)
+        hoverButton.addEventListener('focus', playAudio);
+        hoverButton.addEventListener('blur', stopAudio);
+    </script>
+
 </body>
+
 </html>
